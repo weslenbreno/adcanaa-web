@@ -16,6 +16,7 @@ const HomeContainer = styled.div`
 const Wraper = styled.div`
   width: fit-content;
   text-align: center;
+  padding: 50px;
 `;
 
 const BrandTitle = styled.h1`
@@ -27,6 +28,7 @@ const BrandTitle = styled.h1`
 `;
 
 const CadastroButton = styled.a`
+  cursor: pointer;
   display: inline-block;
   padding: 10px 50px;
   border-radius: 5px;
@@ -35,7 +37,6 @@ const CadastroButton = styled.a`
   font-family: 'Bariol';
   font-weight: 500;
   letter-spacing: 2px;
-  cursor: pointer;
   text-transform: uppercase;
   color: #222;
   margin-top: 100px;
@@ -47,7 +48,6 @@ const CadastroButton = styled.a`
 const Text = styled.p`
   font-family: arkipelago;
   font-size: 28px;
-  text-align: right;
   color: #e0e0e0;
 `;
 

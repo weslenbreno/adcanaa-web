@@ -4,7 +4,6 @@ import axios from 'axios';
 import {
   Steps, Form, Schema, Button,
 } from 'rsuite';
-import bg2 from '../../../assets/images/bg8.jpg';
 import {
   PersonalForm,
   AddressForm,
@@ -20,12 +19,22 @@ const StepsItem = styled(Steps.Item)`
   cursor: pointer;
 `;
 
+const StepsPlus = styled(Steps)`
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+`;
+
 const RegisterContainer = styled.div`
   display: flex;
   align-items: center;
   height: 100vh;
   padding: 0px 15px;
   justify-content: center;
+  h1 {
+    margin: 35px 0px;
+    font-family: 'Bariol';
+  }
 `;
 
 const WelcomeText = styled.p`
@@ -93,13 +102,13 @@ const RegisterPage = () => {
 
   return (
     <RegisterContainer id="cadastro">
+      <StepsPlus current={step} vertical style={{ paddingLeft: 25, paddingRight: 25 }}>
+        <StepsItem title="Conta" onClick={() => setStep(0)} />
+        <StepsItem title="Info. Pessoais" onClick={() => setStep(1)} />
+        <StepsItem title="Endereço" onClick={() => setStep(2)} />
+        <StepsItem title="Finalizar" onClick={() => setStep(3)} />
+      </StepsPlus>
       <Form model={UserModel} onChange={data => setFormValue(data)}>
-        <Steps current={step} style={{ padding: '15px 0px' }}>
-          <StepsItem title="Conta" onClick={() => setStep(0)} />
-          <StepsItem title="Info. Pessoais" onClick={() => setStep(1)} />
-          <StepsItem title="Endereço" onClick={() => setStep(2)} />
-          <StepsItem title="Finalizar" onClick={() => setStep(3)} />
-        </Steps>
         {formSteps[step]}
 
         {step !== 3 && (

@@ -35,6 +35,7 @@ const Control = styled.div`
 const PersonalForm = () => (
   <>
     <FormPlus>
+      <h1>Informações Pessoais</h1>
       <FormGroup>
         <Control>
           <ControlLabel>Nome</ControlLabel>

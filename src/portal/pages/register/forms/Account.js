@@ -26,6 +26,7 @@ const Control = styled.div`
 
 const AccountForm = () => (
   <FormPlus>
+    <h1>Informações de Conta</h1>
     <FormGroup>
       <Control>
         <ControlLabel>Nome de usuário</ControlLabel>
