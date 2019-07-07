@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import {
   FormControl, FormGroup, ControlLabel, SelectPicker, InputPicker, Schema,
 } from 'rsuite';
-import axios from 'axios';
 import estados from './estados.json';
 import cidades from './cidades.json';
 import paises from './paises.json';
@@ -30,7 +29,7 @@ export const addressModel = Schema.Model({
 
 const getCidades = estado => cidades.filter(st => st.Estado === estado);
 
-const AddressForm = (props) => {
+const AddressForm = () => {
   // eslint-disable-next-line react/prop-types
   const [estado, setEstado] = useState(1);
 

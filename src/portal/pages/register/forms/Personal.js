@@ -30,6 +30,11 @@ const Control = styled.div`
   display: inline-block;
   width: calc(50% - 15px);
   margin-right: 15px;
+
+  @media screen and (max-width: 600px) {
+    display: block;
+    width: 100%;
+  }
 `;
 
 const PersonalForm = () => (
