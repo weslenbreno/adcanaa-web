@@ -100,6 +100,7 @@ const FinalStep = (props) => {
         <Uploader
           action="http://localhost:8000/api/igrejas_imagens/"
           data={{ igreja: 1 }}
+          accept="image/jpeg"
           disabled={isImageSelected}
           multiple={false}
           listType="picture"
