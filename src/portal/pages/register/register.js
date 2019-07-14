@@ -26,7 +26,7 @@ const StepsPlus = styled(Steps)`
 `;
 
 const RegisterContainer = styled.div`
-  overflow: hidden;
+  overflow: scroll;
   display: flex;
   align-items: center;
   min-height: 100vh;
@@ -43,6 +43,10 @@ const WelcomeText = styled.p`
   font-family: 'Open Sans';
   font-size: 18px;
   padding: 25px 0px;
+`;
+
+const ButtonsWraper = styled.div`
+  padding: 0px 50px;
 `;
 
 const FinalStep = (props) => {
@@ -112,22 +116,23 @@ const RegisterPage = () => {
       </StepsPlus>
       <Form model={UserModel} onChange={data => setFormValue(data)}>
         {formSteps[step]}
+        <ButtonsWraper>
+          {step !== 3 && (
+            <Button
+              appearance="primary"
+              onClick={() => setStep(step + 1)}
+              style={{ marginRight: 15 }}
+            >
+              Continuar
+            </Button>
+          )}
 
-        {step !== 3 && (
-          <Button
-            appearance="primary"
-            onClick={() => setStep(step + 1)}
-            style={{ marginRight: 15 }}
-          >
-            Continuar
-          </Button>
-        )}
-
-        {step !== 0 && step !== 3 && (
-          <Button appearance="subtle" onClick={() => setStep(step - 1)}>
-            Voltar
-          </Button>
-        )}
+          {step !== 0 && step !== 3 && (
+            <Button appearance="subtle" onClick={() => setStep(step - 1)}>
+              Voltar
+            </Button>
+          )}
+        </ButtonsWraper>
       </Form>
     </RegisterContainer>
   );
