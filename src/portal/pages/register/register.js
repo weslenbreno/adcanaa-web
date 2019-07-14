@@ -33,6 +33,7 @@ const RegisterContainer = styled.div`
   height: 100vh;
   padding: 0px 15px;
   justify-content: center;
+  padding-bottom: 50px;
   h1 {
     margin: 35px 0px;
     font-family: 'Bariol';

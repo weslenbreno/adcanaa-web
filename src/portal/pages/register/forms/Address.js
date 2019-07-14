@@ -53,7 +53,7 @@ const AddressForm = () => {
           <Control>
             <ControlLabel>Estado</ControlLabel>
             <FormControl
-              accepter={SelectPicker}
+              accepter={InputPicker}
               placeholder="Escolha o seu estado"
               name="estado"
               data={estados}
