@@ -114,7 +114,7 @@ const RegisterPage = () => {
         <StepsItem title="Endereço" onClick={() => setStep(2)} />
         <StepsItem title="Finalizar" onClick={() => setStep(3)} />
       </StepsPlus>
-      <Form model={UserModel} onChange={data => setFormValue(data)}>
+      <Form style={{ background: '#fff' }} model={UserModel} onChange={data => setFormValue(data)}>
         {formSteps[step]}
         <ButtonsWraper>
           {step !== 3 && (
