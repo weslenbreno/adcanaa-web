@@ -26,7 +26,6 @@ const StepsPlus = styled(Steps)`
 `;
 
 const RegisterContainer = styled.div`
-  overflow: scroll;
   display: flex;
   align-items: center;
   min-height: 100vh;
