@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import {
-  FormControl, FormGroup, ControlLabel, SelectPicker, InputPicker, Schema,
+  FormControl, FormGroup, ControlLabel, InputPicker, Schema,
 } from 'rsuite';
 import estados from './estados.json';
 import cidades from './cidades.json';
@@ -68,7 +68,7 @@ const AddressForm = () => {
           <Control>
             <ControlLabel>Cidade</ControlLabel>
             <FormControl
-              accepter={SelectPicker}
+              accepter={InputPicker}
               name="cidade"
               placeholder="Escolha sua cidade"
               data={getCidades(estado)}

@@ -2,8 +2,9 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
 import {
-  Steps, Form, Schema, Button,
+  Steps, Form, Schema, Button, Uploader, Icon,
 } from 'rsuite';
+import { setDate } from 'date-fns';
 import {
   PersonalForm,
   AddressForm,
@@ -53,6 +54,7 @@ const ButtonsWraper = styled.div`
 const FinalStep = (props) => {
   // eslint-disable-next-line react/prop-types
   const { formValue } = props;
+  const [isImageSelected, setImageSelected] = useState(false);
 
   const salvarEndereco = async (data) => {
     const endereco = await axios.post('http://localhost:8000/api/enderecos/', {
@@ -83,8 +85,33 @@ const FinalStep = (props) => {
     }
   };
 
+  const handleImageUpload = (data) => {
+    console.log();
+    setImageSelected(!isImageSelected);
+  };
+
+  const setData = (data) => {
+    console.log(data);
+  };
+
   return (
     <div>
+      <div style={{ textAlign: 'center' }}>
+        <Uploader
+          action="http://localhost:8000/api/igrejas_imagens/"
+          data={{ igreja: 1 }}
+          disabled={isImageSelected}
+          multiple={false}
+          listType="picture"
+          onChange={handleImageUpload}
+          name="pic"
+        >
+          <button type="button">
+            <Icon icon="camera-retro" size="lg" />
+          </button>
+        </Uploader>
+        <p>Selecione uma foto</p>
+      </div>
       <WelcomeText>Após concluir, seu cadastro será enviado para validação.</WelcomeText>
       <Button appearance="primary" onClick={() => handleSubmit(formValue)}>
         Concluir Cadastro
